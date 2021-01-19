@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+import {Provider} from 'redux'
 import './App.css';
 import ApplicationWrapper from './ApplicationWrapper';
 

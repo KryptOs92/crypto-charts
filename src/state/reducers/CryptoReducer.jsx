@@ -1,4 +1,4 @@
-export const counter = (state = {}, action) => {
+export const CryptoReducer = (state = {}, action) => {
 	switch (action.type){
 		case("FETCH_CRYPTO_LIST"):
 			return {
