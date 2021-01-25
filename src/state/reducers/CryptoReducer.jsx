@@ -1,4 +1,4 @@
-export const CryptoReducer = (state = {}, action) => {
+const CryptoReducer = (state = {}, action) => {
 	switch (action.type){
 		case("FETCH_CRYPTO_LIST"):
 			return {
@@ -19,8 +19,12 @@ export const CryptoReducer = (state = {}, action) => {
 			return {
                 ...state,
                 loading:true,
-                error:null
+                error:true
             }
+        default:
+            return state
         }
+        
     
 }
+export default CryptoReducer;

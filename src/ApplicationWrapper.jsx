@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import {BrowserRouter} from "react-router-dom"
+import {BrowserRouter,Router} from "react-router-dom"
 import AppRouter from "./view/appRouter/AppRouter";
 import NavBar from "./view/navbar/NavBar";
 

@@ -22,7 +22,7 @@ export default function NavBar() {
 
     return (
         <BottomNavigation value={value} onChange={handleChange} className={classes.root}>
-            <BottomNavigationAction label="" value="recents" icon={<Link to={"\cryptoList"} ><div>HOME</div></Link>} />
+            <BottomNavigationAction label="" value="recents" icon={<Link to={"\cryptoList"} ><div>Crypto List</div></Link>} />
             <BottomNavigationAction label="" value="favorites" icon={<Link to={"\library"} ><div>LIBRARY</div></Link>} />
             <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
             <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
