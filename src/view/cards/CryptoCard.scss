@@ -1,0 +1,40 @@
+.crypto-card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .MuiPaper-root{
+        height: calc(100% - 1px);
+    }
+    .MuiCardContent-root{
+        padding: unset!important;
+    }
+    .MuiCardActions-root{
+        justify-content: center;
+    }
+
+    .MuiCardMedia-root-custom{
+        height: 60px;
+        cursor: pointer;
+        background-size: auto!important;
+    }
+ 
+}
+.crypto-card:hover{
+    .MuiCardMedia-root-custom {
+        animation: rotation 2s infinite;
+     }  
+    
+     @keyframes rotation {
+         from {
+             transform: rotateY(0deg);
+             -webkit-transform: rotateY(0deg);
+         }
+         to {
+             transform: rotateY(359deg);
+             -webkit-transform: rotateY(179deg);
+         }
+       }
+}
+
+
+   

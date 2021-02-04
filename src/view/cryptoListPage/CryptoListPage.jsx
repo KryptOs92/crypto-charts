@@ -1,29 +1,32 @@
-//import {Responsive as ResponsiveGridLayout} from 'react-grid-layout';
-import RGL, { WidthProvider } from "react-grid-layout";
+import {Responsive, WidthProvider } from 'react-grid-layout';
 import {getGridConfiguration} from '../configuration/gridConfiguration'
-import CardanoCard from '../cards/CardanoCard'
+import CardanoCard from '../cards/cardano/CardanoCard'
 import '../../css/GeneralGrid.scss'
-const ReactGridLayout = WidthProvider(RGL);
+const ResponsiveGridLayout = WidthProvider(Responsive);
 export default function CryptoListPage() {
     
-    const gridComponents = [{i: 'cardano', dom: <div>cardano</div>}]
-    const gridConfiguration = getGridConfiguration('cryptoListPage')
-
-    return <ReactGridLayout  className="layout" 
-                        layout={gridConfiguration.layout} 
-                        //breakpoints={gridConfiguration.breakpoints}
+    const gridComponents = [{i: "cardano", dom: <CardanoCard />}]
+    const gridConfiguration = getGridConfiguration("cryptoListPage")
+    const renderGridElements = (gridComponents) => {
+        let elements = []
+        gridComponents.map((component) => {
+            elements.push(<div key={component.i} >
+                {component.dom}
+            </div>)
+        })
+        return elements
+    }
+    return <ResponsiveGridLayout   
+                        className="layout" 
+                        layouts={gridConfiguration.layouts}
+                        breakpoints={gridConfiguration.breakPoints}
                         cols={gridConfiguration.cols}
                         onLayoutChange={gridConfiguration.onLayoutChange}
                         rowHeight={gridConfiguration.rowHeight}
-                        >
+            >
                         
     {
-        gridComponents.map((component) => {
-            return <div key={component.i} >
-                  
-                        {component.dom}
-                    
-                </div>} )
+        renderGridElements(gridComponents)
     }
-    </ReactGridLayout>
+    </ResponsiveGridLayout>
 }

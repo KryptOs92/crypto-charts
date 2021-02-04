@@ -2,7 +2,7 @@ export const getGridConfiguration = (page) =>{
     return{
         cols: getGridColumns(page),
         breakPoints: getGridBreackpoints(page),
-        layout: getGridLayout(page),
+        layouts: getGridLayouts(page),
         rowHeight: getRowHeight(page),
         onLayoutChange: () => {}
     }
@@ -11,16 +11,14 @@ export const getGridConfiguration = (page) =>{
 function getGridColumns(page){
     switch (page){
         default:
-            return {lg: 12, md: 10, sm: 6, xs: 4, xxs: 2}
+            return {lg: 8, md: 8, sm: 6, xs: 4, xxs: 2}
     }
 }
 
 function getRowHeight(page){
     switch(page){
-        case 'cryptoListPage':
-            return 450
         default:
-            return 150
+            return 100
     }
 }
 
@@ -31,17 +29,20 @@ function getGridBreackpoints(page){
     }
 }
 
-function getGridLayout(page){
+function getGridLayouts(page){
     switch(page){
-        case 'cryptoListPage':
+        case "cryptoListPage":
             return getCryptoListPageLayout()
         default:
             return []
     }
 }
 
-function getCryptoListPageLayout(page) {
-    return [
-        {i: "cardano", x: 0, y: 0, w: 1, h: 1,static: false}
-      ];
+function getCryptoListPageLayout() {
+    return {"lg":[{"i": "cardano", "x": 0, "y": 0, "w": 1, "h": 2,"static": false}],
+        "md":[{"i": "cardano", "x": 0, "y": 0, "w": 1, "h": 2,"static": false}],
+        "sm":[{"i": "cardano", "x": 0, "y": 0, "w": 1, "h": 2,"static": false}],
+        "xs":[{"i": "cardano", "x": 0, "y": 0, "w": 1, "h": 2,"static": false}],
+        "xxs":[{"i": "cardano", "x": 0, "y": 0, "w": 1, "h": 2,"static": false}]}
+      ;
 }
